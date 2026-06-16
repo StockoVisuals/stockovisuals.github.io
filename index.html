@@ -566,7 +566,104 @@ footer {
   font-weight: 400;
 }
 
-/* ── REVEAL ── */
+/* ── HERO RIGHT EMPTY ── */
+.hero-right-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 40px;
+  background: var(--ink);
+}
+
+.hero-right-text {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #3a3830;
+}
+
+/* ── CAROUSEL ── */
+.work-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--mid);
+  padding-bottom: 20px;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 8px;
+}
+
+.arrow-btn {
+  width: 40px; height: 40px;
+  border: 1px solid var(--mid);
+  background: transparent;
+  color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  border-radius: 0;
+}
+
+.arrow-btn:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+  min-width: 100%;
+}
+
+.carousel-slide .vid {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.carousel-slide .vid iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 24px; height: 2px;
+  background: var(--mid);
+  cursor: pointer;
+  transition: background 0.2s, width 0.2s;
+}
+
+.dot.active {
+  background: var(--blue);
+  width: 40px;
+}
+
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -638,7 +735,7 @@ footer {
       <span class="outline">BUSINESS</span><br>
       CONTENT.
     </h1>
-    <p class="hero-sub">Short-form and long-form video for Sydney's local businesses. Built to stop the scroll and get people through your door.</p>
+    <p class="hero-sub">Video content for Sydney local businesses. The kind that actually gets people watching and through your door.</p>
     <a href="#work" class="hero-cta">
       See the work
       <span class="cta-arrow">
@@ -651,8 +748,9 @@ footer {
   </div>
 
   <div class="hero-right">
-    <iframe src="https://www.youtube.com/embed/c4u-mllX3lw?si=EDSZGGqxcPiBgFQa&autoplay=0&mute=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <div class="hero-right-label">Latest work</div>
+    <div class="hero-right-inner">
+      <div class="hero-right-text">Video content for local Sydney businesses</div>
+    </div>
   </div>
 </section>
 
@@ -694,18 +792,40 @@ footer {
 <section class="work" id="work">
   <div class="work-header reveal">
     <span class="work-title">Selected Work</span>
+    <div class="carousel-arrows">
+      <button class="arrow-btn" id="prevBtn" aria-label="Previous">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M11 14L6 9L11 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="arrow-btn" id="nextBtn" aria-label="Next">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M7 4L12 9L7 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
   </div>
 
-  <div class="work-grid reveal">
-    <div class="vid vid-a">
-      <iframe src="https://www.youtube.com/embed/4iYthn-_UBk?si=770CbMj7fWyBxh2T" allowfullscreen></iframe>
+  <div class="carousel reveal">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <div class="vid">
+          <iframe src="https://www.youtube.com/embed/4iYthn-_UBk?si=770CbMj7fWyBxh2T" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="vid">
+          <iframe src="https://www.youtube.com/embed/np7kkMHyrJM?si=Atv889Qn-QT-o7Vc" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="vid">
+          <iframe src="https://www.youtube.com/embed/c4u-mllX3lw?si=EDSZGGqxcPiBgFQa" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
-    <div class="vid vid-b">
-      <iframe src="https://www.youtube.com/embed/np7kkMHyrJM?si=Atv889Qn-QT-o7Vc" allowfullscreen></iframe>
-    </div>
-    <div class="vid vid-c">
-      <iframe src="https://www.youtube.com/embed/c4u-mllX3lw?si=EDSZGGqxcPiBgFQa" allowfullscreen></iframe>
-    </div>
+  </div>
+
+  <div class="carousel-dots reveal">
+    <span class="dot active" data-idx="0"></span>
+    <span class="dot" data-idx="1"></span>
+    <span class="dot" data-idx="2"></span>
   </div>
 </section>
 
@@ -720,9 +840,9 @@ footer {
       HARD.
     </h2>
     <div class="about-body">
-      <p>StockoVisuals is a Sydney-based video production outfit built for local businesses that want content worth watching. Not polished for its own sake — built to make people stop, engage, and act.</p>
-      <p>Every shoot starts with one question: what do you want someone to do after watching this? The answer drives everything — the framing, the edit, the pace, the feel.</p>
-      <p>Whether it's a one-off shoot or ongoing content every month, the work is always made with your audience in mind.</p>
+      <p>StockoVisuals is a Sydney based video production business making content for local businesses that people actually want to watch.</p>
+      <p>Every shoot starts with one question: what do you want someone to do after watching this? The answer shapes everything from how it's filmed to how it's edited.</p>
+      <p>Whether it's a one off shoot or content every month, it's always built around your business and your audience.</p>
     </div>
     <div class="about-location">Based in Sydney, Australia</div>
   </div>
@@ -781,11 +901,27 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Stocko<span>Visuals</span></div>
-  <div class="footer-copy">© 2025 StockoVisuals — Sydney, NSW</div>
+  <div class="footer-copy">© 2025 StockoVisuals · Sydney, NSW</div>
 </footer>
 
 <script>
-// Reveal on scroll
+// Carousel
+const track = document.getElementById('carouselTrack');
+const dots = document.querySelectorAll('.dot');
+let current = 0;
+const total = 3;
+
+function goTo(idx) {
+  current = (idx + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
+
+
 const revealEls = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
