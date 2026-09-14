@@ -265,9 +265,11 @@ nav::before {
   overflow: hidden;
 }
 
-.vid-horizontal iframe {
+.vid-horizontal iframe,
+.vid-horizontal video {
   width: 100%; height: 100%;
   border: none; display: block;
+  object-fit: cover;
 }
 
 .vid-verticals {
@@ -282,9 +284,11 @@ nav::before {
   overflow: hidden;
 }
 
-.vid-vertical iframe {
+.vid-vertical iframe,
+.vid-vertical video {
   width: 100%; height: 100%;
   border: none; display: block;
+  object-fit: cover;
 }
 
 /* Photo grid divider */
@@ -683,16 +687,16 @@ footer {
 
     <!-- Full width horizontal video -->
     <div class="vid-horizontal">
-      <iframe src="https://www.youtube.com/embed/c4u-mllX3lw?si=EDSZGGqxcPiBgFQa" allowfullscreen></iframe>
+      <video src="video1.mp4" controls playsinline></video>
     </div>
 
     <!-- Two vertical videos side by side -->
     <div class="vid-verticals">
       <div class="vid-vertical">
-        <iframe src="https://www.youtube.com/embed/np7kkMHyrJM?si=Atv889Qn-QT-o7Vc" allowfullscreen></iframe>
+        <video src="video2.mp4" controls playsinline></video>
       </div>
       <div class="vid-vertical">
-        <iframe src="https://www.youtube.com/embed/4iYthn-_UBk?si=770CbMj7fWyBxh2T" allowfullscreen></iframe>
+        <video src="video3.mp4" controls playsinline></video>
       </div>
     </div>
 
