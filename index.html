@@ -243,11 +243,11 @@ nav::before {
 }
 
 .work-title {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--concrete);
+  color: var(--ink);
 }
 
 /* Video layout */
@@ -293,15 +293,15 @@ nav::before {
 
 /* Photo grid divider */
 .photos-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--concrete);
+  color: var(--ink);
   border-top: 1px solid var(--mid);
-  padding-top: 20px;
+  padding-top: 0;
   margin-top: 40px;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 /* Photo masonry */
@@ -567,6 +567,46 @@ footer {
   letter-spacing: 0.1em;
 }
 
+/* PHOTOS TOGGLE */
+.photos-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--sand2);
+  border: 1.5px solid var(--mid);
+  padding: 28px 32px;
+  margin-top: 40px;
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.photos-toggle:hover {
+  background: var(--mid);
+  border-color: var(--concrete);
+}
+
+.toggle-icon {
+  color: var(--ink);
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-icon.open {
+  transform: rotate(45deg);
+}
+
+.photo-masonry {
+  margin-top: 10px;
+}
+
 /* REVEAL */
 .reveal {
   opacity: 0;
@@ -694,9 +734,17 @@ footer {
   </div>
 
   <!-- Photos -->
-  <div class="photos-label reveal">Photos</div>
+  <button class="photos-toggle reveal" onclick="togglePhotos()" id="photosToggle">
+    <span>Photos</span>
+    <span class="toggle-icon" id="toggleIcon">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 14H19M14 9V19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </button>
 
-  <div class="photo-masonry reveal">
+  <div class="photo-masonry reveal" id="photoMasonry" style="display:none;">
     <div class="photo-item"><img src="Astro_-_Occy-1.jpg" alt=""></div>
     <div class="photo-item"><img src="The_Ryuu_2nd_September-3.JPG" alt=""></div>
     <div class="photo-item"><img src="Wave_Reformer-21.JPG" alt=""></div>
