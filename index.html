@@ -850,6 +850,21 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.06 });
 revealEls.forEach(el => obs.observe(el));
 
+// Photo toggle
+function togglePhotos() {
+  const masonry = document.getElementById('photoMasonry');
+  const icon = document.getElementById('toggleIcon');
+  const isOpen = masonry.style.display !== 'none';
+  if (isOpen) {
+    masonry.style.display = 'none';
+    icon.classList.remove('open');
+  } else {
+    masonry.style.display = 'block';
+    icon.classList.add('open');
+    setTimeout(() => masonry.classList.add('visible'), 50);
+  }
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
