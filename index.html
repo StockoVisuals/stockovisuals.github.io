@@ -342,17 +342,8 @@ nav::before {
   background: #1e1c18;
 }
 
-/* vary heights so masonry feels organic */
-.photo-item:nth-child(1)  .photo-placeholder { aspect-ratio: 4/5; }
-.photo-item:nth-child(2)  .photo-placeholder { aspect-ratio: 3/4; }
-.photo-item:nth-child(3)  .photo-placeholder { aspect-ratio: 1/1; }
-.photo-item:nth-child(4)  .photo-placeholder { aspect-ratio: 5/6; }
-.photo-item:nth-child(5)  .photo-placeholder { aspect-ratio: 3/4; }
-.photo-item:nth-child(6)  .photo-placeholder { aspect-ratio: 4/3; }
-.photo-item:nth-child(7)  .photo-placeholder { aspect-ratio: 1/1; }
-.photo-item:nth-child(8)  .photo-placeholder { aspect-ratio: 3/4; }
-.photo-item:nth-child(9)  .photo-placeholder { aspect-ratio: 4/5; }
-.photo-item:nth-child(10) .photo-placeholder { aspect-ratio: 5/4; }
+/* images define their own natural height in the masonry */
+.photo-item img { width: 100%; height: auto; display: block; }
 
 /* ABOUT */
 .about {
