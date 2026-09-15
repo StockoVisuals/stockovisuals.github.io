@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Banjo Stocken — Sydney Video</title>
 <meta name="description" content="Video content for Sydney local businesses. Banjo Stocken.">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -119,17 +119,20 @@ nav::before {
 }
 
 .hero-title {
-  font-size: clamp(58px, 7.5vw, 108px);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 6.5vw, 96px);
   font-weight: 700;
-  line-height: 0.88;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  font-style: italic;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: var(--ink);
 }
 
 .hero-title .outline {
-  -webkit-text-stroke: 2px var(--ink);
+  -webkit-text-stroke: 1.5px var(--ink);
   color: transparent;
+  font-style: italic;
 }
 
 .hero-sub {
@@ -366,17 +369,20 @@ nav::before {
 }
 
 .about-heading {
+  font-family: 'Playfair Display', serif;
   font-size: clamp(36px, 4.5vw, 60px);
   font-weight: 700;
-  line-height: 0.92;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  font-style: italic;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: var(--sand2);
 }
 
 .about-heading .outline {
-  -webkit-text-stroke: 1.5px var(--sand2);
+  -webkit-text-stroke: 1px var(--sand2);
   color: transparent;
+  font-style: italic;
 }
 
 .about-body {
@@ -450,18 +456,21 @@ nav::before {
 }
 
 .contact-heading {
+  font-family: 'Playfair Display', serif;
   font-size: clamp(42px, 6vw, 80px);
   font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  font-style: italic;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: var(--ink);
   margin-bottom: 56px;
 }
 
 .contact-heading .outline {
-  -webkit-text-stroke: 2px var(--ink);
+  -webkit-text-stroke: 1.5px var(--ink);
   color: transparent;
+  font-style: italic;
 }
 
 .form { display: flex; flex-direction: column; }
@@ -652,13 +661,12 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-kicker">Sydney Video Production</div>
+    <div class="hero-kicker">Banjo Stocken · Sydney</div>
     <h1 class="hero-title">
-      REAL<br>
-      <span class="outline">BUSINESS</span><br>
-      CONTENT.
+      Your business,<br>
+      <span class="outline">seen properly.</span>
     </h1>
-    <p class="hero-sub">Video content for Sydney local businesses. The kind that actually gets people watching and through your door.</p>
+    <p class="hero-sub">Most businesses are invisible online — not because they're not good, but because nobody has filmed them properly yet. That's what I fix.</p>
     <a href="#work" class="hero-cta">
       See the work
       <span class="cta-arrow">
@@ -670,7 +678,7 @@ footer {
     <div class="hero-location">Sydney, Australia</div>
   </div>
   <div class="hero-right">
-    <div class="hero-right-text">Video content for local Sydney businesses</div>
+    <div class="hero-right-text">Clean · Cinematic · Sydney</div>
   </div>
 </section>
 
@@ -768,15 +776,14 @@ footer {
   <div class="about-left reveal">
     <div class="about-label">About</div>
     <h2 class="about-heading">
-      VIDEO<br>
-      THAT<br>
-      <span class="outline">WORKS</span><br>
-      HARD.
+      The camera<br>
+      <span class="outline">guy who gets it.</span>
     </h2>
     <div class="about-body">
-      <p>Banjo Stocken is a Sydney based videographer making content for local businesses that people actually want to watch.</p>
-      <p>Every shoot starts with one question: what do you want someone to do after watching this? The answer shapes everything from how it's filmed to how it's edited.</p>
-      <p>Whether it's a one off shoot or content every month, it's always built around your business and your audience.</p>
+      <p>I'm Banjo — a Sydney based videographer who shoots clean, cinematic content for local businesses that actually want to stand out.</p>
+      <p>I'm not just pointing a camera at your business and calling it done. I take time to understand what makes your place tick, who your customers are, and what you want people to feel when they watch.</p>
+      <p>Most of my clients say the same thing after we work together — that I really got their vibe. That's not an accident. It's how I work on every single shoot.</p>
+      <p>Whether you need a one off shoot or someone to handle your content every month, I'd love to hear about your business.</p>
     </div>
     <div class="about-location">Based in Sydney, Australia</div>
   </div>
@@ -791,10 +798,10 @@ footer {
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner reveal">
-    <div class="contact-label">Get in touch</div>
+    <div class="contact-label">Let's work together</div>
     <h2 class="contact-heading">
-      CONTACT<br>
-      <span class="outline">ME.</span>
+      Tell me about<br>
+      <span class="outline">your business.</span>
     </h2>
 
     <form class="form" onsubmit="handleSubmit(event)">
@@ -821,12 +828,12 @@ footer {
       <div class="form-row">
         <div class="field full last-row" style="border-right:1px solid var(--mid)">
           <label>Tell me about your business</label>
-          <textarea placeholder="What do you do, who are your customers, what are you trying to achieve with video?"></textarea>
+          <textarea placeholder="What does your business do, who are your customers, and what do you want people to do after watching your content?"></textarea>
         </div>
       </div>
       <div class="submit-row">
         <button type="submit" class="submit-btn" id="submitBtn">Send Enquiry</button>
-        <span class="submit-note" id="submitNote">I'll reply within 24 hours.</span>
+        <span class="submit-note" id="submitNote">I'll come back to you within 24 hours with ideas.</span>
       </div>
     </form>
   </div>
